@@ -6,19 +6,16 @@ using System.Drawing;
 namespace AbcYazilim.OgrenciTakip.UI.Win.UserControls.Controls
 {
     [ToolboxItem(true)]
-    public class MyDateEdit : DateEdit, IStatusBarKisaYol
+    public class MySpinEdit : SpinEdit, IStatusBarAciklama
     {
-        public MyDateEdit()
+        public MySpinEdit()
         {
             Properties.AppearanceFocused.BackColor = Color.LightCyan;
             Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            Properties.EditMask = "d"; // girilen değeri basamaklama yapmasını engeliyoruz
         }
 
         public override bool EnterMoveNextControl { get; set; } = true;
-        public string StatusBarKisaYol { get; set; } = "F4 :";
-        public string StatusBarKisaYolAciklama { get; set; } = "Tarih Seç";
         public string StatusBarAciklama { get; set; }
     }
 }
