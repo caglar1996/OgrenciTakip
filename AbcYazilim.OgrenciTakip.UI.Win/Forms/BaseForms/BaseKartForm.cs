@@ -6,5 +6,10 @@
         {
             InitializeComponent();
         }
+
+        private void BaseKartForm_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
